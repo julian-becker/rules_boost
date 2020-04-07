@@ -232,5 +232,6 @@ def boost_deps():
                 "https://mirror.bazel.build/dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.bz2",
                 "https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.bz2",
             ],
-            patch_cmds = [ "rm -f doc/pdf/BUILD", ],
+            patch_cmds = [ "rm -rf doc/pdf/BUILD", ],
+            patch_cmds_win = ["Remove-Item -Recurse -Force -ErrorAction SilentlyContinue -Path "doc/pdf/BUILD" ]
         )
